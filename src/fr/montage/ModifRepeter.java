@@ -2,6 +2,10 @@ package fr.montage;
 
 import fr.film.Film;
 
+/**
+ * La classe ModifRepeter hérite de la classe Montage. 
+ * Cette classe modifie un film en le repetant autant de fois qu'on le souhaite.
+ */
 public class ModifRepeter extends Montage {
 	/**
 	 * nbRep : Le nombre de répétition du film
@@ -11,16 +15,22 @@ public class ModifRepeter extends Montage {
 	 * cptRep : Compte le nombre de répétition effectué
 	 */
 	private int cptRep = 0;
-
-	public ModifRepeter(Film film, int i) {
+	
+	/**
+	 * Constructeur de la class ModifRepeter
+	 * @param film : le film original à repeter
+	 * @param nb : le nombre de repetition à faire
+	 */
+	public ModifRepeter(Film film, int nb) {
 		super.filmOriginal = film;
-		nbRep = i;
+		if(nb <= 0)
+			nbRep = 0;
+		else 
+			nbRep = nb;
 	}
 	
 	@Override
 	public boolean suivante(char[][] écran) {
-		if(nbRep <= 0)
-			return false;
 		if(!filmOriginal.suivante(écran)) {
 			++cptRep;
 			if(cptRep == nbRep) {

@@ -13,6 +13,8 @@ import fr.montage.ModifRepeter;
 public class AppliStudioDeFilm {
 	private static final Film FILM_1 = new LaDiagonaleDuFou();
 	private static final Film FILM_2 = new LaDiagonaleDuFouDroite();
+	private static final Film FILM_3 = new TriangleGaucheHaut();
+	private static final Film FILM_4 = new TriangleDroiteBas();
 	
 	public static void FilmRepeter() {
 		Film filmRep2X = new ModifRepeter(FILM_1, 2);
@@ -60,18 +62,18 @@ public class AppliStudioDeFilm {
 	}
 	
 	public static void FilmIncruster() {
-		Film filmInc = new ModifIncruster(FILM_1, FILM_2);
+		Film filmInc = new ModifIncruster(FILM_3, FILM_4, 3, 6);
 		Films.projeter(filmInc);
 		filmInc.rembobiner(); 
 		try {
-			Films.sauvegarder(filmInc, "Film1-Inc-Film2.txt");
+			Films.sauvegarder(filmInc, "TriangelG-Inc-TriangelD.txt");
 		} catch (FileNotFoundException e) {
-			System.err.println("Le fichier 'Film1-Inc-Film2.txt' n'a pas pu être créé.");
+			System.err.println("Le fichier 'Film3-Inc-Film4.txt' n'a pas pu être créé.");
 		}
 	}
 	
 	public static void main(String[] args) {
-		AppliStudioDeFilm.FilmRepeter();
+		AppliStudioDeFilm.FilmIncruster();
 	}
 	
 }
