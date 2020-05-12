@@ -17,25 +17,25 @@ public class AppliStudioDeFilm {
 	private static final Film FILM_4 = new TriangleDroiteBas();
 	
 	public static void FilmRepeter() {
-		Film filmRep2X = new ModifRepeter(FILM_1, 2);
+		Film filmRep2X = new ModifRepeter(FILM_4, 2);
 		Film filmRep2X2X = new ModifRepeter(filmRep2X, 2);
 		Films.projeter(filmRep2X2X);
 		filmRep2X2X.rembobiner(); 
 		try {
-			Films.sauvegarder(filmRep2X2X, "Film1-Rep4X.txt");
+			Films.sauvegarder(filmRep2X2X, "TriangleIncExt-Rep4X.txt");
 		} catch (FileNotFoundException e) {
 			System.err.println("Le fichier 'Film1-Rep4X.txt' n'a pas pu être créé.");
 		}
 	}
 	
 	public static void FilmExtraire() {
-		Film filmExtrait4A9 = new ModifExtraire(FILM_2, 4, 9);
+		Film filmExtrait4A9 = new ModifExtraire(FILM_3, 5, 24);
 		Films.projeter(filmExtrait4A9);
 		filmExtrait4A9.rembobiner(); 
 		try {
-			Films.sauvegarder(filmExtrait4A9, "Film2-Ext4A9.txt");
+			Films.sauvegarder(filmExtrait4A9, "Triangle-.txt");
 		} catch (FileNotFoundException e) {
-			System.err.println("Le fichier 'Film2-Ext4A9' n'a pas pu être créé.");
+			System.err.println("Le fichier 'Film-Ext-5-24' n'a pas pu être créé.");
 		} 
 	}
 	
@@ -62,18 +62,18 @@ public class AppliStudioDeFilm {
 	}
 	
 	public static void FilmIncruster() {
-		Film filmInc = new ModifIncruster(FILM_3, FILM_4, 3, 6);
+		Film filmInc = new ModifIncruster(FILM_3, FILM_3, 3, 5);
 		Films.projeter(filmInc);
 		filmInc.rembobiner(); 
 		try {
-			Films.sauvegarder(filmInc, "TriangelG-Inc-TriangelD.txt");
+			Films.sauvegarder(filmInc, "TriangleNumInc2.txt");
 		} catch (FileNotFoundException e) {
 			System.err.println("Le fichier 'Film3-Inc-Film4.txt' n'a pas pu être créé.");
 		}
 	}
 	
 	public static void main(String[] args) {
-		AppliStudioDeFilm.FilmIncruster();
+		AppliStudioDeFilm.FilmExtraire();
 	}
 	
 }

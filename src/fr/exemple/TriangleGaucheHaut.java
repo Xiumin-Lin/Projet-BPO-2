@@ -24,7 +24,8 @@ public class TriangleGaucheHaut implements Film {
 		else {
 			for(int i = 0; i < (num % hauteur()); ++i) {
 				for(int j = largeur() - 1 - i; j >= 0; --j) {
-					écran[i][j] = 'V';
+					//écran[i][j] = 'V';
+					écran[i][j] = String.valueOf(num%10).charAt(0);
 				}
 			}
 		}

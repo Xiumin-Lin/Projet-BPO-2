@@ -2,6 +2,7 @@ package fr.montage;
 
 import fr.film.Film;
 import fr.film.Films;
+
 /**
  * La classe ModifIncruster hérite de la classe Montage. 
  * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise.
@@ -24,6 +25,7 @@ public class ModifIncruster extends Montage {
 	 * @param col : le numéro de la colonne où le film doit être incrusté
 	 */
 	public ModifIncruster(Film film1, Film film2, int row, int col) {
+		assert(film1 != null && film2 != null) : "Les films entrées ont des réfèrences null";
 		assert(row > 0 && row <= film1.hauteur() && col > 0 && col <= film1.largeur())
 			: "le numéro de la ligne/colonne est invalide";
 		super.filmOriginal = film1;
@@ -42,6 +44,7 @@ public class ModifIncruster extends Montage {
 		if(!filmOriginal.suivante(écran))
 			return false;
 		else {
+			Films.effacer(ecranIn);
 			if(filmOriginal.equals(filmIn)) {
 				for(int i = 0; i < filmOriginal.hauteur(); ++i) {
 					for(int j = 0; j < filmOriginal.largeur(); ++j) {
@@ -51,11 +54,8 @@ public class ModifIncruster extends Montage {
 				incrustation(écran,ecranIn);
 			}
 			else {
-				Films.effacer(ecranIn);
-				if(filmIn.suivante(ecranIn)) {
-					//Incrustation
-					incrustation(écran,ecranIn);
-				}
+				if(filmIn.suivante(ecranIn))
+					incrustation(écran,ecranIn); //Incrustation
 			}
 			return true;
 		}

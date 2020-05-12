@@ -22,6 +22,7 @@ public class ModifRepeter extends Montage {
 	 * @param nb : le nombre de repetition à faire
 	 */
 	public ModifRepeter(Film film, int nb) {
+		assert(film != null) : "Les films entrées ont des réfèrences null";
 		super.filmOriginal = film;
 		if(nb <= 0)
 			nbRep = 0;
