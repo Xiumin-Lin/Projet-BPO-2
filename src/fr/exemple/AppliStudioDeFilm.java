@@ -40,7 +40,7 @@ public class AppliStudioDeFilm {
 	}
 	
 	public static void FilmEncadrer() {
-		Film filmEnc = new ModifEncadrer(FILM_2);
+		Film filmEnc = new ModifEncadrer(FILM_3);
 		Films.projeter(filmEnc);
 		filmEnc.rembobiner(); 
 		try {
@@ -51,7 +51,7 @@ public class AppliStudioDeFilm {
 	}
 	
 	public static void FilmColler() {
-		Film filmCol = new ModifColler(FILM_1, FILM_2);
+		Film filmCol = new ModifColler(FILM_3, FILM_4);
 		Films.projeter(filmCol);
 		filmCol.rembobiner(); 
 		try {
@@ -73,7 +73,7 @@ public class AppliStudioDeFilm {
 	}
 	
 	public static void main(String[] args) {
-		AppliStudioDeFilm.FilmExtraire();
+		AppliStudioDeFilm.FilmColler();
 	}
 	
 }
