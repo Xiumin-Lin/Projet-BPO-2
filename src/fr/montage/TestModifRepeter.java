@@ -5,11 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import fr.exemple.LaDiagonaleDuFou;
-import fr.film.Film;
-import fr.film.Films;
+import fr.film.*;
 
 class TestModifRepeter {
-	Film film = new LaDiagonaleDuFou();
+	Film film = new LaDiagonaleDuFou(); //20 Frames, 10x10
 	
 	@Test
 	void testHauteurLargeur() {
@@ -28,9 +27,11 @@ class TestModifRepeter {
 		}
 		//Le 41e frame n'existe donc pas
 		assertFalse(filmRep2X.suivante(ecran));
-		// On rembobine le film revenir au frame numero 0
+		// On rembobine le film pour revenir au frame numero 0
 		filmRep2X.rembobiner();
+		Films.effacer(ecran);
 		assertTrue(filmRep2X.suivante(ecran));
+		
 	}
 	@Test
 	void testSuivanteNonRep() {

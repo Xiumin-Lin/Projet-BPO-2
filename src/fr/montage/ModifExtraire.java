@@ -24,6 +24,7 @@ public class ModifExtraire extends Montage {
 	 */
 	private int numFin;
 	private boolean estVide;
+	
 	/**
 	 * Constructeur de la class ModifExtraire
 	 * @param film : le film à extraire
