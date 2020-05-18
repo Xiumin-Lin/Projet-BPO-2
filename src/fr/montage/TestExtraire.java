@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import fr.exemple.TriangleDroiteBas;
 import fr.film.*;
 
-class TestModifExtraire {
+class TestExtraire {
 	Film film = new TriangleDroiteBas(); // 24 frames, 12x11
-	Film filmExt = new ModifExtraire(film, 5, 16); // 24 frames, 12x11
+	Film filmExt = new Extraire(film, 5, 16); // 24 frames, 12x11
 	char[][] ecran = Films.getEcran(filmExt);
 	
 	@Test
@@ -35,12 +35,12 @@ class TestModifExtraire {
 	
 	@Test
 	void testParametreErreur() {
-		filmExt = new ModifExtraire(film, 5, -6); //Extrait Vide
+		filmExt = new Extraire(film, 5, -6); //Extrait Vide
 		assertFalse(filmExt.suivante(ecran));
 		Films.effacer(ecran);
 		filmExt.rembobiner();
 		
-		filmExt = new ModifExtraire(film, -6, 10); //Extrait des frames 0 à 10
+		filmExt = new Extraire(film, -6, 10); //Extrait des frames 0 à 10
 		for(int i = 0; i < 11; ++i) {
 			assertTrue(filmExt.suivante(ecran));
 			Films.effacer(ecran);
@@ -48,7 +48,7 @@ class TestModifExtraire {
 		assertFalse(filmExt.suivante(ecran)); // le 11e frame n'existe pas
 		filmExt.rembobiner();
 		
-		filmExt = new ModifExtraire(film, 15, 50); //Extrait des frames 15 à 23
+		filmExt = new Extraire(film, 15, 50); //Extrait des frames 15 à 23
 		for(int i = 0; i < 9; ++i) {
 			assertTrue(filmExt.suivante(ecran));
 			Films.effacer(ecran);

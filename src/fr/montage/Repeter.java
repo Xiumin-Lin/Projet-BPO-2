@@ -6,7 +6,7 @@ import fr.film.Film;
  * La classe ModifRepeter hérite de la classe Montage. 
  * Cette classe modifie un film en le repetant autant de fois qu'on le souhaite.
  */
-public class ModifRepeter extends Montage {
+public class Repeter extends Montage {
 	/**
 	 * nbRep : Le nombre de répétition du film
 	 */
@@ -21,20 +21,20 @@ public class ModifRepeter extends Montage {
 	 * @param film : le film original à repeter
 	 * @param nb : le nombre de repetition à faire
 	 */
-	public ModifRepeter(Film film, int nb) {
+	public Repeter(Film film, int nb) {
 		assert(film != null) : "Les films entrées ont des réfèrences null";
 		super.filmOriginal = film;
-		if(nb <= 0)
-			nbRep = 0;
-		else 
-			nbRep = nb;
+		nbRep = (nb <= 0)? 0 : nb;
 	}
 	
 	@Override
 	public boolean suivante(char[][] écran) {
+		if(cptRep >= nbRep) {
+			return false;
+		}
 		if(!filmOriginal.suivante(écran)) {
 			++cptRep;
-			if(cptRep == nbRep) {
+			if(cptRep >= nbRep) {
 				return false;
 			}
 			filmOriginal.rembobiner();

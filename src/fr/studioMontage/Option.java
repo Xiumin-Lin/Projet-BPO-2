@@ -1,6 +1,6 @@
-package fr.film;
+package fr.studioMontage;
 
-public enum MontageOption {
+public enum Option {
 	Repeter,
 	Extraire,
 	Encadrer,

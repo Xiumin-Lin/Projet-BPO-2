@@ -3,169 +3,208 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="fr.exemple" project="Projet-BPO-2" file="/Projet-BPO-2/src/fr/exemple" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="275" width="293" x="76" y="287"/>    
+    <position height="275" width="293" x="1054" y="273"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="fr.film" project="Projet-BPO-2" file="/Projet-BPO-2/src/fr/film" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="279" width="297" x="469" y="290"/>    
+    <position height="279" width="522" x="291" y="77"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
   <package id="3" language="java" name="fr.montage" project="Projet-BPO-2" file="/Projet-BPO-2/src/fr/montage" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="465" width="399" x="854" y="113"/>    
+    <position height="307" width="431" x="43" y="462"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
-  <interface id="4" language="java" name="fr.film.Film" project="Projet-BPO-2" 
+  <package id="4" language="java" name="fr.studioMontage" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/studioMontage" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="296" width="337" x="585" y="475"/>    
+    <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
+  </package>  
+  <enumeration id="5" language="java" name="fr.studioMontage.Option" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/studioMontage/Option.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="102" x="717" y="677"/>    
+    <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="6" language="java" name="fr.studioMontage.Studio" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/studioMontage/Studio.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="143" x="692" y="550"/>    
+    <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="fr.film.Film" project="Projet-BPO-2" 
     file="/Projet-BPO-2/src/fr/film/Film.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="105" width="118" x="566" y="364"/>    
+    <position height="127" width="193" x="436" y="170"/>    
     <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
-  <class id="5" language="java" name="fr.film.Films" project="Projet-BPO-2" file="/Projet-BPO-2/src/fr/film/Films.java" 
+  <class id="8" language="java" name="fr.film.Films" project="Projet-BPO-2" file="/Projet-BPO-2/src/fr/film/Films.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="621" y="536"/>    
+    <position height="87" width="94" x="681" y="141"/>    
+    <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="fr.montage.Incruster" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/montage/Incruster.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="127" y="588"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="fr.montage.ModifIncruster" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/montage/ModifIncruster.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1108" y="524"/>    
+  <class id="10" language="java" name="fr.montage.Extraire" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/montage/Extraire.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="149" y="724"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="fr.montage.ModifExtraire" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/montage/ModifExtraire.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1122" y="258"/>    
+  <class id="11" language="java" name="fr.montage.Encadrer" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/montage/Encadrer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="253" y="728"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="fr.montage.ModifColler" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/montage/ModifColler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1147" y="417"/>    
+  <class id="12" language="java" name="fr.montage.Coller" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/montage/Coller.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="413" y="606"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="fr.montage.ModifEncadrer" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/montage/ModifEncadrer.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1161" y="340"/>    
-    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="fr.montage.ModifRepeter" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/montage/ModifRepeter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1014" y="203"/>    
-    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="fr.montage.Montage" project="Projet-BPO-2" 
+  <class id="13" language="java" name="fr.montage.Montage" project="Projet-BPO-2" 
     file="/Projet-BPO-2/src/fr/montage/Montage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="114" width="85" x="931" y="325"/>    
-    <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="fr.exemple.LaDiagonaleDuFou" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/exemple/LaDiagonaleDuFou.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="221" y="494"/>    
+    <position height="-1" width="-1" x="278" y="540"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="fr.exemple.AppliStudioDeFilm" project="Projet-BPO-2" 
-    file="/Projet-BPO-2/src/fr/exemple/AppliStudioDeFilm.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="91" width="154" x="137" y="355"/>    
-    <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" 
+  <class id="14" language="java" name="fr.montage.Repeter" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/montage/Repeter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="381" y="730"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <association id="14">    
-    <bendpoint x="434" y="459"/>    
+  <class id="15" language="java" name="fr.exemple.LaDiagonaleDuFou" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/exemple/LaDiagonaleDuFou.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1206" y="357"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="fr.exemple.TriangleDroiteBas" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/exemple/TriangleDroiteBas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1203" y="495"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="fr.exemple.TriangleGaucheHaut" project="Projet-BPO-2" 
+    file="/Projet-BPO-2/src/fr/exemple/TriangleGaucheHaut.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1210" y="418"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <association id="18">    
+    <bendpoint x="365" y="343"/>    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="15" name="FILM_1"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
+      <attribute id="19" name="filmOriginal"/>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="17">    
-    <bendpoint x="531" y="493"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="4"/>  
+  <realization id="21">    
+    <bendpoint x="324" y="281"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="18">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="11"/>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
   </generalization>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="20">    
-    <bendpoint x="844" y="366"/>    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="21" name="filmOriginal">        
-        <position height="20" width="75" x="685" y="425"/>      
-      </attribute>      
-      <multiplicity id="22" minimum="0" maximum="1">        
-        <position height="0" width="0" x="36" y="-207"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="23">    
-    <bendpoint x="451" y="359"/>    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="24" name="FILM_2"/>      
+    <bendpoint x="265" y="225"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="24" name="filmIncruste"/>      
       <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="26">    
+  <association id="26">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="27" name="filmCo"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="29">    
     <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <realization id="28">    
-    <bendpoint x="793" y="316"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <generalization id="30">    
     <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <realization id="32">    
+    <bendpoint x="698" y="308"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="29">    
+  <generalization id="33">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="34">    
     <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="11"/>  
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

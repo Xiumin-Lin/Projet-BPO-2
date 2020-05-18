@@ -3,6 +3,9 @@ package fr.montage;
 import fr.film.Film;
 
 public abstract class Montage implements Film{
+	/**
+	 * Le film original dont on souhaite modifier
+	 */
 	protected Film filmOriginal;
 
 	@Override

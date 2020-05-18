@@ -8,10 +8,10 @@ import fr.exemple.LaDiagonaleDuFou;
 import fr.exemple.TriangleDroiteBas;
 import fr.film.*;
 
-class TestModifIncruster {
+class TestIncruster {
 	Film film = new TriangleDroiteBas(); // 24 frames, 12x11
 	Film film2 = new LaDiagonaleDuFou(); // 20 frames, 10x10
-	Film filmInc = new ModifIncruster(film, film2, 5, 3);
+	Film filmInc = new Incruster(film, film2, 5, 3);
 	char[][] ecran = Films.getEcran(filmInc);
 	
 	@Test

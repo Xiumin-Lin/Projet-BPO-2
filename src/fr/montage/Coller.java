@@ -6,18 +6,26 @@ import fr.film.Film;
  * La classe ModifColler hérite de la classe Montage.
  * Celles-ci colle deux films l'un à la suite de l'autre
  */
-public class ModifColler extends Montage {
+public class Coller extends Montage {
+	/**
+	 * Le film qui s'ajoute à la suite du premier
+	 */
 	private Film filmCo;
-
+	/**
+	 * Indique si les 2 films à coller sont identiques
+	 */
+	private boolean estIdentique;
+	
 	/**
 	 * Constructeur de la class ModifColler
 	 * @param film1 : le premier film
 	 * @param film2 : le film qui s'ajoute à la suite du premier
 	 */
-	public ModifColler(Film film1, Film film2) {
+	public Coller(Film film1, Film film2) {
 		assert(film1 != null && film2 != null) : "Les films entrés ont des références null";
 		super.filmOriginal = film1;
 		this.filmCo = film2;
+		this.estIdentique = filmOriginal.equals(filmCo);
 	}
 
 	@Override
@@ -39,6 +47,10 @@ public class ModifColler extends Montage {
 	@Override
 	public boolean suivante(char[][] écran) {
 		if(!filmOriginal.suivante(écran)) {
+			if(this.estIdentique) {
+				filmOriginal.rembobiner();
+				estIdentique = false;
+			}
 			if(!filmCo.suivante(écran)) {
 				return false;
 			}
@@ -50,5 +62,6 @@ public class ModifColler extends Montage {
 	public void rembobiner() {
 		super.filmOriginal.rembobiner();
 		this.filmCo.rembobiner();
+		this.estIdentique = filmOriginal.equals(filmCo);
 	}
 }

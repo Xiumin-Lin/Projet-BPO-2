@@ -7,13 +7,17 @@ import fr.film.Films;
  * La classe ModifEncadrer hérite de la classe Montage. 
  * Cette classe encadre chaque image d'un film.
  */
-public class ModifEncadrer extends Montage {
+public class Encadrer extends Montage {
+	/**
+	 * La forme du cadre
+	 */
 	private static final char CADRE = '*';
+	
 	/**
 	 * Constructeur de la class ModifEncadrer
 	 * @param film : le film à encadrer
 	 */
-	public ModifEncadrer(Film film) {
+	public Encadrer(Film film) {
 		assert(film != null ): "Les films entrées ont des références null";
 		super.filmOriginal = film;
 	}
@@ -30,7 +34,7 @@ public class ModifEncadrer extends Montage {
 
 	@Override
 	public boolean suivante(char[][] écran) {
-		char[][] écran2 = Films.getEcran(this.filmOriginal);;
+		char[][] écran2 = Films.getEcran(this.filmOriginal);
 		if(!filmOriginal.suivante(écran2))
 			return false;
 		

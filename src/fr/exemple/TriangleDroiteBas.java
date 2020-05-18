@@ -1,8 +1,6 @@
 package fr.exemple;
 
-import fr.film.Film;
-
-public class TriangleDroiteBas extends TriangleGaucheHaut implements Film{
+public class TriangleDroiteBas extends TriangleGaucheHaut{
 
 	@Override
 	public boolean suivante(char[][] écran) {
