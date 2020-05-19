@@ -1,4 +1,4 @@
-package fr.montage;
+package fr.montageVersion2;
 
 import fr.film.Film;
 import fr.film.Films;
@@ -7,7 +7,7 @@ import fr.film.Films;
  * La classe Encadrer hérite de la classe Montage. 
  * Cette classe encadre chaque image d'un film.
  */
-public class Encadrer extends Montage {
+public class Encadrer2 extends Montage2{
 	/**
 	 * La forme du cadre
 	 */
@@ -15,11 +15,10 @@ public class Encadrer extends Montage {
 	
 	/**
 	 * Constructeur de la class Encadrer
-	 * @param film : le film à encadrer
+	 * @param f : le film à encadrer
 	 */
-	public Encadrer(Film film) {
-		assert(film != null ): "Les films entrées ont des références null";
-		super.filmOriginal = film;
+	public Encadrer2(Film f) {
+		super(f); //Copie Profonde du film original à encadrer
 	}
 
 	@Override
@@ -52,8 +51,7 @@ public class Encadrer extends Montage {
 				écran[i][j] = écran2[i-1][j-1];
 			}
 		}
-		return true;
-			
+		return true;	
 	}
 
 	@Override

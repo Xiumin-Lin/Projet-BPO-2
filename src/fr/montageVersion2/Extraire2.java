@@ -1,4 +1,4 @@
-package fr.montage;
+package fr.montageVersion2;
 
 import fr.film.Film;
 import fr.film.Films;
@@ -13,7 +13,7 @@ import fr.film.Films;
  * 	_ Si le num de la derniere images à extraire est superireur au nombre d'image 
  * 		total du film, l'extrait va alors s'arreter à la fin du film original.
  */
-public class Extraire extends Montage {
+public class Extraire2 extends Montage2{
 	private int numFrame = -1;
 	/**
 	 * Numero du 1er image à inclure
@@ -30,13 +30,12 @@ public class Extraire extends Montage {
 	
 	/**
 	 * Constructeur de la class Extraire
-	 * @param film : le film à extraire
+	 * @param f : le film à extraire
 	 * @param numD : numero de la 1ere image à inclure
 	 * @param numF : numero de la derniere image à inclure
 	 */
-	public Extraire(Film film, int numD, int numF) {
-		assert(film != null ): "Les films entrées ont des réfèrences null";
-		super.filmOriginal = film;
+	public Extraire2(Film f, int numD, int numF) {
+		super(f); //Copie profonde du film original à extraire
 		this.numDebut = (numD < 0)? 0 : numD;
 		this.numFin = numF;
 		this.estVide = (numDebut > numFin)? true : false;
@@ -57,8 +56,7 @@ public class Extraire extends Montage {
 
 	@Override
 	public void rembobiner() {
-		filmOriginal.rembobiner();
-		numFrame = -1;
+		this.filmOriginal.rembobiner();
+		this.numFrame = -1;
 	}
-
 }

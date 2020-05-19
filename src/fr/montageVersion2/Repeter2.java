@@ -1,4 +1,4 @@
-package fr.montage;
+package fr.montageVersion2;
 
 import fr.film.Film;
 
@@ -6,7 +6,7 @@ import fr.film.Film;
  * La classe Repeter hérite de la classe Montage. 
  * Cette classe modifie un film en le repetant autant de fois qu'on le souhaite.
  */
-public class Repeter extends Montage {
+public class Repeter2 extends Montage2{
 	/**
 	 * nbRep : Le nombre de répétition du film
 	 */
@@ -18,12 +18,11 @@ public class Repeter extends Montage {
 	
 	/**
 	 * Constructeur de la class Repeter
-	 * @param film : le film original à repeter
+	 * @param f : le film original à repeter
 	 * @param nb : le nombre de repetition à faire
 	 */
-	public Repeter(Film film, int nb) {
-		assert(film != null) : "Les films entrées ont des réfèrences null";
-		super.filmOriginal = film;
+	public Repeter2(Film f, int nb) {
+		super(f); //Copie profonde du film original à repeter
 		nbRep = (nb <= 0)? 0 : nb;
 	}
 	

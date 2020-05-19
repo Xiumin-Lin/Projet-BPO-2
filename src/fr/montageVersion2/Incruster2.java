@@ -1,17 +1,19 @@
-package fr.montage;
+package fr.montageVersion2;
 
 import fr.film.Film;
+import fr.film.FilmCopie;
 import fr.film.Films;
 
 /**
  * La classe Incruster hérite de la classe Montage. 
  * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise.
  */
-public class Incruster extends Montage {
+public class Incruster2 extends Montage2{
 	/**
 	 * le film a inscruter dans le film original
 	 */
 	private Film filmIncruste;
+	
 	private int idxRow;
 	private int idxCol;
 	private int filmInHauteurMax;
@@ -20,18 +22,18 @@ public class Incruster extends Montage {
 	
 	/**
 	 * Constructeur de la class Incruster
-	 * @param film1 : le film recevrant l'incrustation
-	 * @param film2 : le film devant être inscruter
+	 * @param f1 : le film recevrant l'incrustation
+	 * @param f2 : le film devant être inscruter
 	 * @param row : le numéro de la ligne où le film doit être incrusté
 	 * @param col : le numéro de la colonne où le film doit être incrusté
 	 */
-	public Incruster(Film film1, Film film2, int row, int col) {
-		assert(film1 != null && film2 != null) : "Les films entrées ont des réfèrences null";
-		assert(row > 0 && row <= film1.hauteur() && col > 0 && col <= film1.largeur())
+	public Incruster2(Film f1, Film f2, int row, int col) {
+		super(f1);
+		assert(f1 != null && f2 != null) : "Les films entrés ont des réfèrences null";
+		assert(row > 0 && row <= f1.hauteur() && col > 0 && col <= f1.largeur())
 			: "le numéro de la ligne/colonne est invalide";
 		
-		super.filmOriginal = film1;
-		this.filmIncruste = film2;
+		this.filmIncruste = new FilmCopie(f2); //Copie Profonde du film devant être incruster
 		this.idxRow = row - 1;
 		this.idxCol = col - 1;
 		
@@ -48,26 +50,16 @@ public class Incruster extends Montage {
 			return false;
 		else {
 			Films.effacer(ecranIn);
-			if(filmOriginal.equals(filmIncruste)) {
-				for(int i = 0; i < filmOriginal.hauteur(); ++i) {
-					for(int j = 0; j < filmOriginal.largeur(); ++j) {
-						ecranIn[i][j] = écran[i][j]; //on crée une copie de l'écran original
-					}
-				}
-				incrustation(écran,ecranIn);
-			}
-			else {
-				if(filmIncruste.suivante(ecranIn))
-					incrustation(écran,ecranIn); //Incrustation
-			}
+			if(filmIncruste.suivante(ecranIn))
+				incrustation(écran,ecranIn); //Incrustation
 			return true;
 		}
 	}
 
 	@Override
 	public void rembobiner() {
-		super.filmOriginal.rembobiner();
-		this.filmIncruste.rembobiner();
+		filmOriginal.rembobiner();
+		filmIncruste.rembobiner();
 	}
 	
 	/**
