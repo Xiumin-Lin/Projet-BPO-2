@@ -22,7 +22,7 @@ public class Repeter extends Montage {
 	 * @param nb : le nombre de repetition à faire
 	 */
 	public Repeter(Film film, int nb) {
-		assert(film != null) : "Les films entrées ont des réfèrences null";
+		assert(film != null) : "Le film entré a une références null";
 		super.filmOriginal = film;
 		nbRep = (nb <= 0)? 0 : nb;
 	}

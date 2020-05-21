@@ -5,7 +5,7 @@ import fr.film.Films;
 
 /**
  * La classe Encadrer hérite de la classe Montage. 
- * Cette classe encadre chaque image d'un film.
+ * Cette classe encadre chaque image d'un film avec le caractère '*'.
  */
 public class Encadrer extends Montage {
 	/**
@@ -15,11 +15,11 @@ public class Encadrer extends Montage {
 	
 	/**
 	 * Constructeur de la class Encadrer
-	 * @param film : le film à encadrer
+	 * @param f1 : le film à encadrer
 	 */
-	public Encadrer(Film film) {
-		assert(film != null ): "Les films entrées ont des références null";
-		super.filmOriginal = film;
+	public Encadrer(Film f1) {
+		assert(f1 != null ): "Le film entré a une références null";
+		super.filmOriginal = f1;
 	}
 
 	@Override

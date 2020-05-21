@@ -4,7 +4,7 @@ import fr.film.Film;
 
 /**
  * La classe Coller hérite de la classe Montage.
- * Celles-ci colle deux films l'un à la suite de l'autre
+ * Celles-ci colle deux films l'un à la suite de l'autre.
  */
 public class Coller extends Montage {
 	/**
@@ -17,13 +17,13 @@ public class Coller extends Montage {
 	private boolean premierEstFini = false;
 	/**
 	 * Constructeur de la class Coller
-	 * @param film1 : le premier film
-	 * @param film2 : le film qui s'ajoute à la suite du premier
+	 * @param f1 : le premier film
+	 * @param f2 : le film qui s'ajoute à la suite du premier
 	 */
-	public Coller(Film film1, Film film2) {
-		assert(film1 != null && film2 != null) : "Les films entrés ont des références null";
-		super.filmOriginal = film1;
-		this.film2 = film2;
+	public Coller(Film f1, Film f2) {
+		assert(f1 != null && f2 != null) : "Les films entrés ont des références null";
+		super.filmOriginal = f1;
+		this.film2 = f2;
 	}
 
 	@Override
@@ -46,9 +46,7 @@ public class Coller extends Montage {
 	public boolean suivante(char[][] écran) {
 		if(!premierEstFini) {
 			if(!filmOriginal.suivante(écran)) {
-				if(filmOriginal.equals(film2)) {
-					filmOriginal.rembobiner();
-				}
+				filmOriginal.rembobiner();
 				premierEstFini = true;
 			}
 		}

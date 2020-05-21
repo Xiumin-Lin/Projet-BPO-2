@@ -5,22 +5,27 @@ import fr.film.Films;
 
 /**
  * La classe Extraire hérite de la classe Montage. <br>
- * Cette classe permet d'extraire une partie d'un film désigné par les numéros de la
- * premieres et dernieres images (frames) à inclure du film. <br>
- * La 1ere image d'un film porte le numéro 0. <br>
- * 	_ Si le num de la 1ere images à extraire est negatif, l'extrait démarre 
- * 		alors au début du film original.
- * 	_ Si le num de la derniere images à extraire est superireur au nombre d'image 
- * 		total du film, l'extrait va alors s'arreter à la fin du film original.
+ * Cette classe permet d'extraire une partie d'un film désigné par les numéros
+ * de la premieres et dernieres images (frames) à inclure du film. <br>
+ * La 1ère image d'un film porte le numéro 0. <br>
+ * _ Si le num de la 1ère image à extraire est négatif, l'extrait démarre 
+ * 		alors au début du film original. <br>
+ * _ Si le num de la dernière image à extraire est supérieur au nombre d'image 
+ * 		total du film, l'extrait va alors s'arrêter à la fin du film original. <br>
+ * _ Si le num de la dernière image est supérireur à la première, 
+ *  	l'extrait sera alors vide. 
  */
 public class Extraire extends Montage {
+	/**
+	 * Le num du frame actuel (-1 signifie que le film n'est pas lancé)
+	 */
 	private int numFrame = -1;
 	/**
-	 * Numero du 1er image à inclure
+	 * Num du 1er image à inclure
 	 */
 	private int numDebut;
 	/**
-	 * Numero du dernier image à inclure
+	 * Num du dernier image à inclure
 	 */
 	private int numFin;
 	/**
@@ -30,13 +35,13 @@ public class Extraire extends Montage {
 	
 	/**
 	 * Constructeur de la class Extraire
-	 * @param film : le film à extraire
+	 * @param f : le film à extraire
 	 * @param numD : numero de la 1ere image à inclure
 	 * @param numF : numero de la derniere image à inclure
 	 */
-	public Extraire(Film film, int numD, int numF) {
-		assert(film != null ): "Les films entrées ont des réfèrences null";
-		super.filmOriginal = film;
+	public Extraire(Film f, int numD, int numF) {
+		assert(f != null ): "Le film entré a une références null";
+		super.filmOriginal = f;
 		this.numDebut = (numD < 0)? 0 : numD;
 		this.numFin = numF;
 		this.estVide = (numDebut > numFin)? true : false;

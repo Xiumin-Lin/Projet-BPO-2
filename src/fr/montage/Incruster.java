@@ -1,37 +1,56 @@
 package fr.montage;
 
 import fr.film.Film;
+import fr.film.FilmCopie;
 import fr.film.Films;
 
 /**
  * La classe Incruster hérite de la classe Montage. 
- * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise.
+ * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise. <br>
+ * _ Le numéro de la ligne et de la colonne où le film doit être incrusté ne doivent pas être
+ * 	 en dehors de la taille de l'écran du film recevrant l'incrustation. 
+ * 	 La numérotation des lignes et colonnes commence à 1 
  */
 public class Incruster extends Montage {
-	/**
-	 * le film a inscruter dans le film original
+	/** 
+	 * le film à inscruter dans le film original 
 	 */
 	private Film filmIncruste;
+	/** 
+	 * l'indice de la ligne où le film doit être incrusté 
+	 */
 	private int idxRow;
+	/** 
+	 * l'indice de la colonne où le film doit être incrusté 
+	 */
 	private int idxCol;
+	/**
+	 * l'indice de la ligne que le filmIncruste ne doit pas dépasser dans l'écran du filmOriginal
+	 */
 	private int filmInHauteurMax;
+	/**
+	 * l'indice de la colonne que le filmIncruste ne doit pas dépasser dans l'écran du filmOriginal
+	 */
 	private int filmInLargeurMax;
+	/** 
+	 * l'écran du film à incruster 
+	 */
 	private char[][] ecranIn;
 	
 	/**
 	 * Constructeur de la class Incruster
-	 * @param film1 : le film recevrant l'incrustation
-	 * @param film2 : le film devant être inscruter
-	 * @param row : le numéro de la ligne où le film doit être incrusté
-	 * @param col : le numéro de la colonne où le film doit être incrusté
+	 * @param f1 : le film recevrant l'incrustation
+	 * @param f2 : le film devant être inscruter
+	 * @param row : le numéro de la ligne où le film doit être incrusté (la 1ère ligne porte le numéro 1)
+	 * @param col : le numéro de la colonne où le film doit être incrusté (la 1ère colonne porte le numéro 1)
 	 */
-	public Incruster(Film film1, Film film2, int row, int col) {
-		assert(film1 != null && film2 != null) : "Les films entrées ont des réfèrences null";
-		assert(row > 0 && row <= film1.hauteur() && col > 0 && col <= film1.largeur())
-			: "le numéro de la ligne/colonne est invalide";
+	public Incruster(Film f1, Film f2, int row, int col) {
+		assert(f1 != null && f2 != null) : "Les films entrées ont des réfèrences null";
+		assert(row > 0 && row <= f1.hauteur() && col > 0 && col <= f1.largeur())
+			: "le numéro de la ligne/colonne où le film doit être incrusté est invalide";
 		
-		super.filmOriginal = film1;
-		this.filmIncruste = film2;
+		super.filmOriginal = f1;
+		this.filmIncruste = new FilmCopie(f2); //crée une copie du film à incruster
 		this.idxRow = row - 1;
 		this.idxCol = col - 1;
 		
@@ -48,18 +67,8 @@ public class Incruster extends Montage {
 			return false;
 		else {
 			Films.effacer(ecranIn);
-			if(filmOriginal.equals(filmIncruste)) {
-				for(int i = 0; i < filmOriginal.hauteur(); ++i) {
-					for(int j = 0; j < filmOriginal.largeur(); ++j) {
-						ecranIn[i][j] = écran[i][j]; //on crée une copie de l'écran original
-					}
-				}
-				incrustation(écran,ecranIn);
-			}
-			else {
-				if(filmIncruste.suivante(ecranIn))
-					incrustation(écran,ecranIn); //Incrustation
-			}
+			if(filmIncruste.suivante(ecranIn))
+				incrustation(écran,ecranIn); //Incrustation
 			return true;
 		}
 	}

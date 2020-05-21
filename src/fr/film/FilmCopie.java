@@ -3,10 +3,10 @@ package fr.film;
 import java.util.ArrayList;
 
 /**
- * La classe FilmCopie permet de créer une copie d'un film en stockant chaque image
- * du film dans une ArrayList<char[][]> "filmCopie". <br>
- * Cette classe fonctionne comme un film normal (les mèthodes de l'interface Film
- * sont applicables)
+ * La classe FilmCopie permet de créer une copie d'un film en stockant 
+ * chaque image du film dans une ArrayList<char[][]> "filmCopie". <br>
+ * Cette classe fonctionne comme un film normal (les méthodes de 
+ * l'interface Film sont applicables).
  */
 public class FilmCopie implements Film{
 	/**
@@ -22,7 +22,7 @@ public class FilmCopie implements Film{
 	 */
 	private int largeur;
 	/**
-	 * Le numéro de frame
+	 * Le numéro du frame
 	 */
 	private int num = 0;
 	
