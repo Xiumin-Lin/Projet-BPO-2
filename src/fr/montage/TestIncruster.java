@@ -1,42 +1,41 @@
 package fr.montage;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
-import fr.exemple.LaDiagonaleDuFou;
-import fr.exemple.TriangleDroiteBas;
+import fr.exemple.*;
 import fr.film.*;
 
 class TestIncruster {
-	Film film = new TriangleDroiteBas(); // 24 frames, 12x11
-	Film film2 = new LaDiagonaleDuFou(); // 20 frames, 10x10
-	Film filmInc = new Incruster(film, film2, 5, 3);
-	char[][] ecran = Films.getEcran(filmInc);
+	private Film film1 = new ImageFull(); // 10 frames, 10x16
+	private Film film2 = new LaDiagonaleDuFou(); // 20 frames, 10x10
+	int nbFrame;
+	private int getNbFrame(Film f) {
+		int n = 0;
+		char[][] ecran = Films.getEcran(f);
+		while(f.suivante(ecran)) {
+			++n;
+			Films.effacer(ecran);
+		}
+		f.rembobiner();
+		return n;
+	}
 	
 	@Test
 	void testHauteurLargeur() {
-		assertEquals(film.hauteur(), filmInc.hauteur());
-		assertEquals(film.largeur(), filmInc.largeur());
+		Film filmInc = new Incruster(film1, film2, 5, 3);
+		assertEquals(film1.hauteur(), filmInc.hauteur());
+		assertEquals(film1.largeur(), filmInc.largeur());
 	}
 	
 	@Test
-	void testSuivante() {
-		//Le nouveau film a autant de frames que le film1, c'est-à-dire 24 frames
-		for(int i = 0; i < 24; ++i) {
-			assertTrue(film.suivante(ecran));
-			Films.effacer(ecran);
-		}
-		// Donc le 25e frame n'existe pas
-		assertFalse(filmInc.suivante(ecran));
-		// On rembobine le film pour revenir au frame numero 0
-		filmInc.rembobiner();
-		assertTrue(filmInc.suivante(ecran));
-		Films.effacer(ecran);
+	void testFilmInc() {
+		Film filmInc = new Incruster(film1, film2, 5, 3);
+		nbFrame = getNbFrame(filmInc);
+		assertEquals(10, nbFrame);
+		//on inverse l'ordre des 2 films
+		filmInc = new Incruster(film2, film1, 5, 3);
+		nbFrame = getNbFrame(filmInc);
+		assertEquals(20, nbFrame);
 	}
-	
-	@Test 
-	void testParametreInvalide() {
-	}
-
 }

@@ -8,8 +8,9 @@ import fr.film.Films;
  * La classe Incruster hérite de la classe Montage. 
  * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise. <br>
  * _ Le numéro de la ligne et de la colonne où le film doit être incrusté ne doivent pas être
- * 	 en dehors de la taille de l'écran du film recevrant l'incrustation. 
- * 	 La numérotation des lignes et colonnes commence à 1 
+ * 	 supérieur à la taille de l'écran du film recevrant l'incrustation. 
+ * 	 La numérotation des lignes et colonnes commence à 1 <br>
+ * _ Si le numéro de la ligne et/ou de la colonne est négatif, alors sa valeur est remplacée par 0
  */
 public class Incruster extends Montage {
 	/** 
@@ -46,13 +47,13 @@ public class Incruster extends Montage {
 	 */
 	public Incruster(Film f1, Film f2, int row, int col) {
 		assert(f1 != null && f2 != null) : "Les films entrées ont des réfèrences null";
-		assert(row > 0 && row <= f1.hauteur() && col > 0 && col <= f1.largeur())
+		assert(row <= f1.hauteur() && col <= f1.largeur())
 			: "le numéro de la ligne/colonne où le film doit être incrusté est invalide";
 		
 		super.filmOriginal = f1;
 		this.filmIncruste = new FilmCopie(f2); //crée une copie du film à incruster
-		this.idxRow = row - 1;
-		this.idxCol = col - 1;
+		this.idxRow = (row <= 0) ? 0 : row - 1;
+		this.idxCol = (col <= 0) ? 0 : col - 1;
 		
 		filmInHauteurMax = (filmOriginal.hauteur() >= (filmIncruste.hauteur() + idxRow)) ? 
 				filmIncruste.hauteur() + idxRow : filmOriginal.hauteur() ;

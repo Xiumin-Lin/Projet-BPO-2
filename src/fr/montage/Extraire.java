@@ -53,9 +53,10 @@ public class Extraire extends Montage {
 			return false;
 		do {
 			++numFrame;
-			Films.effacer(écran);
 			if(!filmOriginal.suivante(écran))
 				return false;
+			if(numFrame < numDebut)
+				Films.effacer(écran);
 		} while(numFrame < numDebut);
 		return (numFrame > numFin)? false : true;
 	}

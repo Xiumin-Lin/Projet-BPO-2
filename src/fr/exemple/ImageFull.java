@@ -4,7 +4,7 @@ import fr.film.Film;
 
 public class ImageFull implements Film{
 	private int num = 0;
-	private final int NB_IMAGES = 20;
+	private final int NB_IMAGES = 10;
 	
 	@Override
 	public int hauteur() {

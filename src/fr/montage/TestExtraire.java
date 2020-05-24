@@ -1,59 +1,60 @@
 package fr.montage;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
-import fr.exemple.TriangleDroiteBas;
+import fr.exemple.LaDiagonaleDuFou;
 import fr.film.*;
 
 class TestExtraire {
-	Film film = new TriangleDroiteBas(); // 24 frames, 12x11
-	Film filmExt = new Extraire(film, 5, 16); // 24 frames, 12x11
-	char[][] ecran = Films.getEcran(filmExt);
+	private Film film = new LaDiagonaleDuFou(); // 20 frames, 10x10
+	private int nbFrame;
+	
+	private int getNbFrame(Film f) {
+		int n = 0;
+		char[][] ecran = Films.getEcran(f);
+		while(f.suivante(ecran)) {
+			++n;
+			Films.effacer(ecran);
+		}
+		f.rembobiner();
+		return n;
+	}
 	
 	@Test
 	void testHauteurLargeur() {
+		Film filmExt = new Extraire(film, 5, 16); // 12 frames, 10x10
 		assertEquals(film.hauteur(), filmExt.hauteur());
 		assertEquals(film.largeur(), filmExt.largeur());
 	}
-	
 	@Test
-	void testSuivante() {
-		//Le nouveau film a autant de frames que le film1, c'est-à-dire 24 frames (numéroté de 0 à 23)
-		for(int i = 0; i < 24; ++i) {
-			assertTrue(film.suivante(ecran));
-			Films.effacer(ecran);
-		}
-		// Donc le frame numero 24 n'existe pas
-		assertFalse(filmExt.suivante(ecran));
-		// On rembobine le film pour revenir au frame numero 0
-		filmExt.rembobiner();
-		assertTrue(filmExt.suivante(ecran));
-		Films.effacer(ecran);
+	void testFilmExt() {
+		Film filmExt = new Extraire(film, 5, 16); // 12 frames, 10x10
+		nbFrame = getNbFrame(filmExt);
+		assertEquals(12, nbFrame); //l'extrait possède 12 frames
 	}
-	
 	@Test
-	void testParametreErreur() {
-		filmExt = new Extraire(film, 5, -6); //Extrait Vide
-		assertFalse(filmExt.suivante(ecran));
-		Films.effacer(ecran);
-		filmExt.rembobiner();
+	void testFilmExtExt() { //Extraction d'un extrait
+		Film filmExt = new Extraire(film, 5, 16); // 12 frames, 10x10
+		Film filmExtExt = new Extraire(filmExt, 4, 8); // 5 frames, 10x10
+		nbFrame = getNbFrame(filmExtExt);
+		assertEquals(5, nbFrame); //le nouvel extrait possède 5 frames
+	}
+	@Test
+	void testExtraitVide() {
+		Film filmExtVide = new Extraire(film, 5, -6); //Extrait Vide
+		nbFrame = getNbFrame(filmExtVide);
+		assertEquals(0, nbFrame);
+	}
+	@Test
+	void testExtraitHorsLimite() {
+		Film filmExtHL = new Extraire(film, -6, 10); //l'extrait commence au frame 0
+		nbFrame = getNbFrame(filmExtHL);
+		assertEquals(11, nbFrame);
 		
-		filmExt = new Extraire(film, -6, 10); //Extrait des frames 0 à 10
-		for(int i = 0; i < 11; ++i) {
-			assertTrue(filmExt.suivante(ecran));
-			Films.effacer(ecran);
-		}
-		assertFalse(filmExt.suivante(ecran)); // le 11e frame n'existe pas
-		filmExt.rembobiner();
+		filmExtHL.rembobiner();
 		
-		filmExt = new Extraire(film, 15, 50); //Extrait des frames 15 à 23
-		for(int i = 0; i < 9; ++i) {
-			assertTrue(filmExt.suivante(ecran));
-			Films.effacer(ecran);
-		}
-		assertFalse(filmExt.suivante(ecran)); // le 11e frame n'existe pas
-		filmExt.rembobiner();
+		filmExtHL = new Extraire(film, 0, 50); //l'extrait se fini lorsque film est fini
+		nbFrame = getNbFrame(filmExtHL);
+		assertEquals(20, nbFrame);
 	}
 }

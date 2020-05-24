@@ -61,7 +61,8 @@ public class Studio {
 	 * Incruste un film dans un autre film à une position précise. <br>
 	 * _ Le numéro de la ligne et de la colonne où le film doit être incrusté ne doivent pas être
 	 * 	 en dehors de la taille de l'écran du film recevrant l'incrustation. 
-	 * 	 La numérotation des lignes et colonnes commence à 1.
+	 * 	 La numérotation des lignes et colonnes commence à 1. <br>
+	 * _ Si le numéro de la ligne et/ou de la colonne est négatif, alors sa valeur est remplacée par 0
 	 * @param filmOriginal : le film recevant l'incrustation
 	 * @param f2 : le film à incruster
 	 * @param numLigne : le numéro de la ligne où le film doit être incrusté (la 1ère ligne porte le numéro 1)
