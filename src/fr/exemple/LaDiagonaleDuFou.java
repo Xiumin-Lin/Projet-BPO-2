@@ -1,4 +1,4 @@
-	package fr.exemple;
+package fr.exemple;
 
 
 import java.io.FileNotFoundException;

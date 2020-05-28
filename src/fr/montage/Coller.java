@@ -4,7 +4,7 @@ import fr.film.Film;
 
 /**
  * La classe Coller hérite de la classe Montage.
- * Celles-ci colle deux films l'un à la suite de l'autre.
+ * Celles-ci collent deux films l'un à la suite de l'autre.
  */
 public class Coller extends Montage {
 	/**

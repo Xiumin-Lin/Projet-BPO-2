@@ -8,9 +8,10 @@ import fr.film.Films;
  * La classe Incruster hérite de la classe Montage. 
  * Cette classe modifie un film en incrustant un autre film dans ce film à une position précise. <br>
  * _ Le numéro de la ligne et de la colonne où le film doit être incrusté ne doivent pas être
- * 	 supérieur à la taille de l'écran du film recevrant l'incrustation. 
+ * 	 supérieur à la taille de l'écran du film recevant l'incrustation. 
  * 	 La numérotation des lignes et colonnes commence à 1 <br>
  * _ Si le numéro de la ligne et/ou de la colonne est négatif, alors sa valeur est remplacée par 0
+ * _ Il est conseillé d'éviter d'incruster un film ayant un nombre d'image illimité
  */
 public class Incruster extends Montage {
 	/** 
@@ -46,7 +47,7 @@ public class Incruster extends Montage {
 	 * @param col : le numéro de la colonne où le film doit être incrusté (la 1ère colonne porte le numéro 1)
 	 */
 	public Incruster(Film f1, Film f2, int row, int col) {
-		assert(f1 != null && f2 != null) : "Les films entrées ont des réfèrences null";
+		assert(f1 != null && f2 != null) : "Les films entrées ont des références null";
 		assert(row <= f1.hauteur() && col <= f1.largeur())
 			: "le numéro de la ligne/colonne où le film doit être incrusté est invalide";
 		

@@ -36,11 +36,11 @@ public class Studio {
 	 * 	 alors au début du film original. <br>
 	 * _ Si le num de la dernière image à extraire est supérieur au nombre d'image 
 	 * 	 total du film, l'extrait va alors s'arrêter à la fin du film original. <br>
-	 * _ Si le num de la dernière image est supérireur à la première, 
+	 * _ Si le num de la dernière image est supérieur à la première, 
 	 * 	 l'extrait sera alors vide. 
 	 * @param filmOriginal : le film à extraire
 	 * @param NumDeb : le numéro de la 1ère images à extraire 
-	 * @param NumFin : le numéro de la dernière images à extraire
+	 * @param NumFin : le numéro de la dernière image à extraire
 	 * @return un nouveau film représentant l'extrait du film souhaité
 	 */
 	public static Film extraction(Film filmOriginal, int NumDeb, int NumFin) {
@@ -63,6 +63,7 @@ public class Studio {
 	 * 	 en dehors de la taille de l'écran du film recevrant l'incrustation. 
 	 * 	 La numérotation des lignes et colonnes commence à 1. <br>
 	 * _ Si le numéro de la ligne et/ou de la colonne est négatif, alors sa valeur est remplacée par 0
+	 * _ Evitez d'incruster un film ayant un nombre d'image illimité
 	 * @param filmOriginal : le film recevant l'incrustation
 	 * @param f2 : le film à incruster
 	 * @param numLigne : le numéro de la ligne où le film doit être incrusté (la 1ère ligne porte le numéro 1)

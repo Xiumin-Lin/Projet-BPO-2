@@ -40,7 +40,7 @@ public class Extraire extends Montage {
 	 * @param numF : numero de la derniere image à inclure
 	 */
 	public Extraire(Film f, int numD, int numF) {
-		assert(f != null ): "Le film entré a une références null";
+		assert(f != null ): "Le film entré a une référence null";
 		super.filmOriginal = f;
 		this.numDebut = (numD < 0)? 0 : numD;
 		this.numFin = numF;

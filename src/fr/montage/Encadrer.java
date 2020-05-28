@@ -18,7 +18,7 @@ public class Encadrer extends Montage {
 	 * @param f1 : le film à encadrer
 	 */
 	public Encadrer(Film f1) {
-		assert(f1 != null ): "Le film entré a une références null";
+		assert(f1 != null ): "Le film entré a une référence null";
 		super.filmOriginal = f1;
 	}
 
