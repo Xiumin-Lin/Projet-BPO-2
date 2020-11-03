@@ -3,11 +3,10 @@
 
 	<property name="src.dir" location="src" />
 	<property name="bin.dir" location="bin" />
-	<property name="lib.dir" location="lib" />
 
 	<!-- Deletes the existing build directory-->
 	<target name="clean" description="remove intermediate files">
-		<delete dir="${bin.dir}"> 
+		<delete dir="${bin.dir}" /> 
 	</target>
 
 	<target name="init">
