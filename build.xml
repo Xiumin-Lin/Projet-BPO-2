@@ -3,6 +3,13 @@
 
 	<property name="src.dir" location="src" />
 	<property name="bin.dir" location="bin" />
+	<property name="lib.dir" location="lib" />
+
+	<path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
 
 	<!-- Deletes the existing build directory-->
 	<target name="clean" description="remove intermediate files">
@@ -20,7 +27,7 @@
 	</target>
 
 	<target name="compile" depends="clean, init" description="compile the Java source code to class files">
-		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${bin.dir}" />
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" />
 	</target>
 
 </project>
