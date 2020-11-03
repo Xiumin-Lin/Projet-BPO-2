@@ -1,6 +1,5 @@
-<!-- build.xml -->
-<?xml version="1.0"?>
-<project name="the project" default="compile" basedir=".">
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BPO2" default="compile" basedir=".">
 
 	<property name="src.dir" location="src" />
 	<property name="bin.dir" location="bin" />
@@ -8,12 +7,8 @@
 
 	<!-- Deletes the existing build directory-->
 	<target name="clean" description="remove intermediate files">
-        <delete dir="${bin.dir}">
-    </target>
-
-	<path id="classpath">
-		<fileset dir="${lib.dir}" includes="**/*.jar" />
-	</path>
+		<delete dir="${bin.dir}"> 
+	</target>
 
 	<target name="init">
 		<!-- Create the time stamp -->
@@ -23,7 +18,7 @@
 	</target>
 
 	<target name="compile" depends="clean, init" description="compile the Java source code to class files">
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref=".classpath" />
 	</target>
 
 </project>
