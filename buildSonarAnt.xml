@@ -2,9 +2,8 @@
 <project name="BPO2WithSonarAnt" default="sonarTest" xmlns:sonar="antlib:org.sonar.ant" basedir=".">
 
 	<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
-	<property name="sonar.host.url" value="http://localhost:9000" />
-	<property name="sonar.login" value="admin" />
-	<property name="sonar.password" value="admin" />
+	<property name="sonar.host.url" value="http://sonarqube:9000" />
+	<property name="sonar.login" value="2c18370114e13295428850c86002ca000ae8f136" />
 
 	<!-- Define the SonarQube project properties -->
 	<property name="sonar.projectKey" value="BPO2WithSonarAntKey" />
