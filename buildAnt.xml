@@ -11,7 +11,7 @@
         </fileset>
     </path>
 
-	<!-- Deletes the existing build directory-->
+	<!-- Deletes the build directory (if he exists) -->
 	<target name="clean" description="remove intermediate files">
 		<delete dir="${bin.dir}" /> 
 	</target>
