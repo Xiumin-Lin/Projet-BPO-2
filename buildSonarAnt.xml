@@ -3,7 +3,7 @@
 
 	<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
 	<property name="sonar.host.url" value="http://sonarqube:9000" />
-	<property name="sonar.login" value="67158b0b02429cd311e6215734b0cf83d8c4e7d2" />
+	<property name="sonar.login" value="c5ed8c0030b6054e8af756ff1616fbd16403fded" />
 
 	<!-- Define the SonarQube project properties -->
 	<property name="sonar.projectKey" value="BPO2WithSonarAntKey" />
