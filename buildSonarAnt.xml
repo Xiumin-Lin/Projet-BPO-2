@@ -2,18 +2,20 @@
 <project name="BPO2WithSonarAnt" default="sonarTest" xmlns:sonar="antlib:org.sonar.ant" basedir=".">
 
 	<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
-	<property name="sonar.host.url" value="http://sonarqube:9000" />
+	<property name="sonar.host.url" value="http://localhost:9000" />
 	<property name="sonar.login" value="admin" />
 	<property name="sonar.password" value="admin" />
 
 	<!-- Define the SonarQube project properties -->
 	<property name="sonar.projectKey" value="BPO2WithSonarAntKey" />
-	<property name="sonar.projectName" value="BPO2SonarAnt" />
+	<property name="sonar.projectName" value="Test SonarQube Scanner for Ant" />
 	<property name="sonar.projectVersion" value="1.0" />
 	<property name="sonar.sources" value="src" />
 	<property name="sonar.java.binaries" value="bin" />
+	<property name="sonar.java.libraries" value="lib/*.jar" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
 	<property name="sonar.java.source" value="8" />
+	<property name="sonar.language" value="java" />
 
 	<!-- ========= Define the main properties of this project ========= -->
 	<property name="src.dir" location="src" />
@@ -48,12 +50,12 @@
 
 	<!-- Define SonarScanner for Ant Target -->
 	<target name="sonarTest" depends="compile" >
-    	<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
     	    <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
    	    	<classpath path="sonarqube-ant-task-2.5.jar" />
-    	</taskdef> 
-
-    	<!-- Execute SonarScanner for Ant Analysis -->
+   	    </taskdef> 
+		
+		<!-- Execute SonarScanner for Ant Analysis -->
     	<sonar:sonar />
 	</target>
 
